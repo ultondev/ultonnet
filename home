@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    
+    <!-- my cdn -->
+    <link rel="stylesheet" href="https://rawcdn.githack.com/danizevaro/css/3e079dfaeb89fb675aa6d33890837727c3eda5a1/swiper.main.css" />
+    <style>
+:root {
+    --primary-color: #53dff5;
+    --animate-duration: 300ms;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--primary-color);
+}
+
+.panel {
+    top: 0;
+    width: 100%;
+    padding: 15px;
+    position: fixed;
+}
+
+.panel h4 {
+    font-size: 14px;
+    opacity: 0.7;
+    color: white;
+}
+
+.panel .main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.panel .main img {
+    width: 43px;
+    height: 43px;
+    border-radius: 100px;
+}
+
+.panel .main div {
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.panel .main div img {
+    width: 27px;
+    height: 27px;
+    margin-left: 10px;
+}
+
+.panel .menu {
+    display: flex;
+    column-gap: 15px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.panel .menu button {
+    display: flex;
+    align-items: center;
+}
+
+.panel .menu .deposit {
+    outline: none;
+    border: none;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 8px 15px;
+    border-radius: 25px;
+    background: white;
+    color: var(--primary-color);
+}
+
+.panel .menu .mutasi {
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    background: transparent;
+}
+
+.container {
+    height: 100vh;
+}
+
+.panel-1 {
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    position: sticky;    
+    margin-top: 130px;
+    background: #53dff5;
+    border-radius: 20px 20px 0 0;
+}
+
+.panel-1 .lu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel-1 .lu div {
+    width: 45px;
+    height: 7px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+}
+
+.panel-1 .list-menu {
+    display: flex;
+    padding: 0 25px;
+    margin-top: 15px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.panel-1 .list-menu div {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+.panel-1 .list-menu div img {
+    width: 33px;
+    height: 33px;
+}
+
+.panel-1 .grub-wa {
+    display: flex;
+    margin: 20px 15px;
+    padding: 15px;
+    border-radius: 10px;
+    align-items: center;
+    border: 1px dashed white;
+    justify-content: space-between;
+}
+
+.panel-1 .grub-wa button {
+    width: 40%;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid white;
+    background: transparent;
+}
+
+.panel-1 .grub-wa div {
+    width: 60%;
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.panel-1 .grub-wa div img {
+    width: 40px;
+    height: 40px;
+}
+
+.panel-1 .grub-wa div p {
+    width: 100%;
+    color: white;
+    font-size: 14px;
+}
+
+.main-set {
+    top: 100px;
+    width: 100%;
+    height: 84vh;           
+    position: sticky;
+    margin-top: -30px;
+    background: white;
+    border-radius: 20px 20px 0 0;
+}
+
+.main-menu {
+    display: grid;
+    margin-top: -10px;
+    column-gap: 10px;
+    grid-row-gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.main-menu div {
+    display: flex;
+    font-size: 13px;
+    text-align: center;
+    grid-row-gap: 6px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-menu div img {
+    width: 42px;
+    height: 42px;
+}
+
+.main-menu div p {
+    width: 55px;
+}
+
+/* slide swiper */
+.swiper-wrapper,
+.swiper-container {
+    display: flex;
+    background: transparent;    
+}
+
+.swiper-banner {
+    margin-top: 20px;
+    padding: 15px 15px;
+    border-radius: 9px;
+}
+
+.swiper-slider-center {
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 110px;
+    border-radius: 8px;
+}
+
+.swipe-card {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background: white;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border: 1px solid #eeeeee;
+    justify-content: space-between;
+}
+
+.swiper-card {
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.swiper-slide div {
+    display: flex;
+    color: #737373;
+    font-size: 13px;
+    font-weight: 500;
+    align-items: center;
+}
+
+.swiper-slide div img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.swiper-slide button {
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 7px;
+    background: var(--primary-color);
+}
+
+.swiper-slider-center .swiper-pagination-bullet {
+    transition: 500ms ease-in-out;
+    background-color: #575757;
+}
+
+.swiper-slider-center .swiper-pagination-bullet-active {
+    border-radius: 8px;
+    background-color: var(--primary-color);
+}
+
+.protection {
+    margin: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background: white;
+    border: 1px solid #eee;
+}
+
+.protection-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    justify-content: space-between;
+}
+
+.protection-item .protection-item-i {
+    display: flex;
+    align-items: center;
+}
+
+.protection-item .protection-item-i img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+.protection-item button {
+    padding: 5px 15px;
+    border-radius: 5px;
+    background: white;
+    font-weight: 500;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.protection-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.protection-menu div {
+    display: flex;
+    font-size: 10px;
+    align-items: center;
+}
+
+.protection-menu div img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+
+.tutup-popup {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 19px;
+    background: #eee;
+    border-radius: 10px;
+    color: var(--primary-color);
+}
+
+.none-category {
+    text-align: center;
+}
+
+    </style>
+</head>
+<body id="byd">
+    <div class="panel">
+        <h4>Hi Kak! Dicky</h4>
+        <div class="main">
+            <div>
+                <h2 class="change-saldo">10000</h2>
+                <img src="https://i.postimg.cc/j22Wn4Dz/20250614-215034.png" alt="">
+      <!--            <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="25" height="25" fill="white">
+                    <path d="M15.4,9.88,10.81,5.29a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42L14,11.29a1,1,0,0,1,0,1.42L9.4,17.29a1,1,0,0,0,1.41,1.42l4.59-4.59A3,3,0,0,0,15.4,9.88Z"/></svg>  -->
+            </div>
+            <img src="{{foto_profil}}" alt="">
+        </div>
+        <div class="menu">
+            <button class="deposit">+ deposit saldo</button>
+            <button class="mutasi"> 
+                <p>Riwayat</p>
+                <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M15.4,9.88,10.81,5.29a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42L14,11.29a1,1,0,0,1,0,1.42L9.4,17.29a1,1,0,0,0,1.41,1.42l4.59-4.59A3,3,0,0,0,15.4,9.88Z"/></svg></button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="panel-1">
+            <div class="lu">
+                <div></div>
+            </div>
+            <div class="list-menu">
+                <div onclick="window.location.href=''">
+                    <img src="https://i.postimg.cc/bYRQ2ZWV/20250614-213409.png" alt="">
+                    <p>Transfer</p>
+                </div>
+                <div onclick="window.location.href=''">
+                    <img src="https://i.postimg.cc/0NHYjF4k/20250614-212938.png" alt="">
+                    <p>Poin</p>
+                </div>
+                <div onclick="window.location.href=''">
+                    <img src="https://i.postimg.cc/TPPjRfCN/20250614-212711.png" alt="">
+                    <p>Voucher</p>
+                </div>
+                <div onclick="Toast.open('Upss!!, halaman sedang maintenance', 3000, 'info-warning')">
+                    <img src="https://i.postimg.cc/sDFQg7VZ/20250614-215506.png" alt="">
+                    <p>Amalin</p>
+                </div>
+            </div>
+            <div class="grub-wa">
+                <div>
+                    <img src="https://i.postimg.cc/MG6fH7V5/20250614-195546.png" alt="">
+                    <p>Telegram</p>
+                </div>
+                <button onclick="window.location.href=''">Join Group +</button>
+            </div>
+        </div>
+        <!-- menu -->
+        <div class="main-set">
+            <!-- swiper cards -->
+        <div class="swiper-container swiper-slider-center swiper-card">
+            <div class="swiper-wrapper">
+               <div class="swiper-slide swipe-card swipers">
+                  <div>
+                        <img src="https://i.postimg.cc/HkfkMbqX/20250614-195322.png" alt="">
+                        <p>Ada Kendala?</p>
+                    </div>
+                   <button onclick="window.location.href='https://qiosvoucher.webtoko.net/digital/251208'">Chat</button>
+                </div>
+     <!--       <div class="swiper-slide swipe-card">
+                 ❌<div>❌ -->
+     <!--                  <img src="https://icodec.xyz/asset/images/app/qios-voucher/customer-service%20(3).png" alt="">
+                        <p>Anda Butuh Bantuan ?</p> -->
+         <!--           </div> -->
+<!--                    <button onclick="window.location.href='https://qiosvoucher.webtoko.net/digital/251207'">Chat</button> -->
+          <!--        </div>  -->
+           </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        
+        <!-- menu -->
+        <div class="main-menu">
+            <div onclick="window.location.href=''">
+                <img src="https://i.postimg.cc/sxz4CS87/20250614-213841.png" alt="">
+                <p>Check</p>
+            </div>
+            <div onclick="Toast.open('Upss!!, produk sedang maintenance', 3000, 'info-warning')">
+                <img src="https://i.postimg.cc/fbmkNXDz/20250614-204256.png" alt="">
+                <p>Sosmed</p>
+            </div>
+            <div onclick="Sheet.open(KontenPln, styleForSheet)">
+                <img src="https://i.postimg.cc/dtrfGVs7/20250614-203018.png" alt="">
+                <p>Config</p>
+            </div>
+            <div onclick="Sheet.open(KontenLainnya, styleForSheet)">
+                <img src="https://i.postimg.cc/nVjStYWb/20250614-205730.png" alt="">
+                <p>Lainnya</p>
+            </div>
+        </div>
+        
+        <!-- slide -->
+        <div class="swiper-container-banner swiper-slider-center swiper-banner">
+            <div class="swiper-wrapper">
+                <!-- slide 5 -->
+                <div class="swiper-slide swipers swiper-slide-banner" onclick="window.location.href=''">
+                    <img src="https://i.postimg.cc/qRhqkMSL/20250614-215858.jpg" alt="" class="banner">
+                </div>
+                <!-- slide 4 -->
+                <div class="swiper-slide swiper-slide-banner" onclick="window.location.href=''">
+                    <img src="https://i.postimg.cc/XJRfWPHr/20250614-222509.jpg" alt="" class="banner">
+                </div>
+                <!-- slide 3 -->
+                <div class="swiper-slide swiper-slide-banner" onclick="window.location.href=''">
+                    <img src="https://i.postimg.cc/xTTCCRw8/20250614-223308.jpg" alt="" class="banner">
+                </div>
+            </div>
+        </div>
+
+        <!-- card protected -->
+        <div class="protection">
+            <div class="protection-item">
+                <div class="protection-item-i">
+                    <img src="https://i.postimg.cc/vHdmrXFG/20250614-210536.png" alt="">
+                    <div>
+                        <h4>Doty</h4>
+                        <h5>Protection</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="protection-menu">
+                <div>
+                    <img src="https://i.postimg.cc/jqyxSNWm/20250614-210912.png" alt="">
+                    <p>Garansi Uang Kembali</p>
+                </div>
+                <div>
+                    <img src="https://i.postimg.cc/CLKQQpV7/20250614-211428.png" alt="">
+                    <p>Keamanan Privasi Data</p>
+                </div>
+                <div>
+                    <img src="https://i.postimg.cc/MH0q322q/20250614-210808.png" alt="">
+                    <p>Layanan Bantuan 24/7</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <!-- my function   -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/danizevaro/cdn@main/library/component/offcanvas/main-script.min.js"></script>
+    <script>
+let styleForSheet = {
+   height: 'auto',
+   zIndex: 9999,
+   backgroundColor: 'white',
+   padding: '25px 10px',
+   borderRadius: '20px 20px 0 0',
+};
+
+const KontenPln = `<div class="main-menu">
+    <div onclick="window.location.href=''">
+        <img src="https://i.postimg.cc/Rhy7mxGN/20250615-103626.png" alt="">
+        <p>by.U</p>
+    </div>
+    <div onclick="Toast.open('Upss!!, produk sedang maintenance', 3000, 'info-warning')">
+        <img src="https://i.postimg.cc/DZCQCXXQ/20250615-103919.png" alt="">
+        <p>Tsel</p>
+    </div>
+    <div onclick="Toast.open('Upss!!, produk sedang maintenance', 3000, 'info-warning')">
+        <img src="https://i.postimg.cc/ZYMFp6Z4/20250615-103615.png" alt="">
+        <p>XL</p>
+    </div>
+    <div onclick="Toast.open('Upss!!, produk sedang maintenance', 3000, 'info-warning')">
+        <img src="https://i.postimg.cc/T1pVB3Vz/20250615-103729.png" alt="">
+        <p>Tri</p>
+    </div>
+</div>
+<button class="tutup-popup" onclick="history.back()">Kembali</button>`;
+
+const KontenLainnya = `
+<div class="none-category">
+    <h3>Upss !!</h3>
+    <p>kategori lainnya sedang dalam penambahan</p>
+</div>
+<button class="tutup-popup" onclick="history.back()">Tutup</button>
+`;
+
+const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    centeredSlides: true,
+    spaceBetween: 10,
+    slideToClickedSlide: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});
+    
+const swiperBanner = new Swiper('.swiper-container-banner', {
+    slidesPerView: 1,
+    centeredSlides: true,
+    spaceBetween: 10,
+    slideToClickedSlide: true,
+    autoplay: {
+        delay: 7000,
+        disableOnInteraction: false,
+    },
+});
+
+const saldo = $('.change-saldo');
+const changeSaldo = (angka) => {
+    const reverse = angka.toString().split('').reverse().join('');
+    const ribuan = reverse.match(/\d{1,3}/g);
+    return ribuan.join('.').split('').reverse().join('');
+    };
+
+    saldo.each(function() {
+    $(this).text("Rp "+changeSaldo($(this).text()));
+});
+
+$(".deposit").click(() => {
+    window.location.href = "https://nekodev.webtoko.net/akun/?page=topup"
+})
+
+$(".mutasi").click(() => {
+    window.location.href = "https://nekodev.webtoko.net/akun/?page=riwayat_saldo"
+})
+    </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8e1faf18cff83e32","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2024.10.5","token":"7f68228aadce4d1381c43cb4d6ea2712"}' crossorigin="anonymous"></script>
+</body>
+</html>
